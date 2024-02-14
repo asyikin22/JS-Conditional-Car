@@ -1,0 +1,54 @@
+<!--language: lang-html-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Conditional - Car Type</title>
+</head>
+<body>
+    <label for="car">Select the type of car you are interested in: </label>
+    <select id="car">
+        <option value="">--Choose One--</option>
+        <option value="sedan">Sedan</option>
+        <option value="suv">SUV</option>
+        <option value="hatchback">Hatchback</option>
+        <option value="coupe">Coupe</option>
+        <option value="truck">Truck</option>
+    </select>
+    <p></p>
+     
+    <!--language: lang-js-->
+
+    <script>
+        const select = document.querySelector("select");
+        const para = document.querySelector("p");
+
+        select.addEventListener("change", setCar);
+
+        function setCar () {
+            const choice = select.value;
+
+            if (choice === "sedan") {
+                para.textContent = 
+                "Sedans are common cars with four doors and a separate trunk.\nThey seat up to five passengers comfortably and are known for their balance of fuel efficiency, affordability, and practicality.";
+            } else if (choice === "suv") {
+                para.textContent = 
+                "SUVs are versatile vehicles designed for various road conditions. They have higher ground clearance, often with all-wheel drive, and offer spacious interiors with ample cargo space.";
+            } else if (choice === "hatchback") {
+                para.textContent = 
+                "Hatchbacks feature a rear door opening upwards to access the cargo area. They offer a continuous cabin space and are known for their compact size, fuel efficiency, and flexibility for transporting larger items.";
+            } else if (choice === "coupe") {
+                para.textContent =
+                "Coupes are sleek, two-door cars with a sporty design. They prioritize driver engagement with powerful engines and responsive handling, sacrificing some practicality for a dynamic driving experience.";
+            } else if (choice === "truck") {
+                para.textContent =
+            "Trucks are rugged vehicles designed for hauling cargo and towing. They typically have a spacious cabin with seating for up to five passengers and a separate bed for carrying loads.";
+            } else {
+                para.textContent = "";
+         }
+       }
+    </script>
+</body>
+</html>
